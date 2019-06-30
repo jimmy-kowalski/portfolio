@@ -1,0 +1,83 @@
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)), url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.user-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+
+    img {
+        display: block;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #9cecfb; // #6caed5;
+    }
+
+    h1 {
+        font-family: $secondaryFont;
+        font-size: 5rem;
+        letter-spacing: 4px;
+        // color: #f5f5f5;
+        // background: linear-gradient(to right, #50c9c3, #96deda);
+        // background: linear-gradient(to right, #085078, #85d8ce);
+        // background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+        // background: linear-gradient(to right, #1fa2ff, #12d8fa);
+        // background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+        // background: linear-gradient(to right, #2193b0, #6dd5ed);
+        // background: linear-gradient(to right, #2980b9, #6dd5fa, #fff);
+        // background: linear-gradient(to right, #00b4db, #0083b0);
+        // background: linear-gradient(to right, #1c92d2, #f2fcfe);
+        // background: linear-gradient(to right, #36d1dc, #5b86e5);
+        // background: linear-gradient(to right, #56ccf2, #2f80ed);
+        // background: linear-gradient(to right, #b2fefa, #0ed2f7);
+        // background: linear-gradient(to right, #c0c0aa, #1cefff);
+        background: linear-gradient(to right, #9cecfb, #65c7f7);
+        // background: linear-gradient(to right, #2c3e50, #4ca1af);
+        // background: linear-gradient(to right, #3a7bd5, #3a6073);
+        // background: linear-gradient(to right, #00d2ff, #928dab);
+        // background: linear-gradient(to right, #4ca1af, #c4e0e5);
+        // background: linear-gradient(to right, #4b79a1, #283e51);
+        // background: linear-gradient(to right, #2980b9, #2c3e50);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: .2em;
+        // margin: 10px;
+    }
+    
+    p {
+        color: $light-color;
+        // opacity: .8;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        letter-spacing: 1px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .user-box {
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 3px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}

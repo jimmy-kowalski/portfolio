@@ -1,0 +1,137 @@
+/* About */
+.about {
+    padding: 5rem 0;
+    background: $body-color; // #3a6073, #283e51, #4b79a1, #2c3e50
+    color: $light-color;
+    
+}
+
+.about-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bio {
+        flex: 1;
+        // flex-basis: 50%;
+        padding: 0 2em;
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+    }
+
+    .skills {
+        flex: 1;
+        // flex-basis: 50%;
+        padding: 2em;
+        background: lighten($body-color, 10%);
+        box-shadow: 0 10px 25px rgba(0,0,0,.5);
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(to right, #65c7f7, #9cecfb);
+                border-radius: 5px;
+                margin: 5px 0;
+            }
+        }
+
+        img {
+            width: 20px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+
+            .photoshop-heading {
+                position: relative;
+                padding-left: 25px;
+
+                &::before {
+                    content: url(../img/photoshop_logo.png);
+                    position: absolute;
+                    left: -1px;
+                    top: 0;
+                    display: block;
+                  }
+            }
+
+            .fa-html5 {
+                color: #e34f26;
+            }
+
+            i {
+                font-size: 1.1rem;
+                margin-right: 3px;
+            }
+
+            .fa-css3 {
+                color: #3498db;
+            }
+
+            .fa-sass {
+                color: #cd6799;
+            }
+
+            .fa-bootstrap {
+                color: #602c50;
+            }
+
+            .fa-js {
+                color: #f0db4f;
+            }
+        }
+
+        .skill-bar {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            margin: 1rem 0 1.2rem;
+            background: rgba(0,0,0,.6);
+
+            .progress {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background: linear-gradient(to right, #65c7f7, #9cecfb);
+                box-shadow: 0 0 25px rgba(156,236,251,.6);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    right: 0;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #9cecfb;
+                    box-shadow: 0 0 25px rgba(156,236,251,1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-inner {
+        flex-direction: column;
+
+
+    .skills {
+        margin-top: 4rem;
+        // flex-basis: 100%;
+        width: 90%;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+/* Navigation */
+nav {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    
+    ul {
+        display: flex;
+        // justify-content: space-around;
+
+        &:hover li {
+            opacity: .5;
+            filter: blur(2px);
+        }
+
+        li {
+            transition: .5s;
+
+            &:hover {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+    
+        a {
+            color: $light-color;
+            padding: 1em 0;
+            margin: 0 2rem;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            // opacity: 1;
+        }
+        
+    }
+
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    // width: 30px;
+    // height: 25px;
+    color: #f5f5f5;
+    padding: .3em .6em;
+    // font-size: 2rem;
+    cursor: pointer;
+    z-index: 99;
+    display: none;
+    transition: transform .5s ease-out;
+
+    .btn-line {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 3px 0 5px 0;
+        border-radius: 5px;
+        background: linear-gradient(to right, #9cecfb, #65c7f7);
+        transition: .5s ease-out;
+
+        // &:nth-child(1) {
+        //     width: 28px;
+        // }
+
+        &:nth-child(2) {
+            width: 20px;
+        }
+
+        &:nth-child(3) {
+            width: 25px;
+        }
+
+    }
+
+    &:hover .btn-line {
+        width: 30px;
+    }
+
+    // rotate into X
+    &.open {
+        .btn-line {
+            &:nth-child(1) {
+                transform: translate(0, 9px) rotate(45deg); 
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translate(0, -9px) rotate(-45deg); 
+                width: 30px;
+            }
+        }
+    }
+}
+
+.overlay {
+    background-color: rgba(0,0,0,.9);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+    transition: opacity .7s;
+}
+
+@media screen and (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: relative;
+        z-index: 2;
+
+        ul {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            height: 90vh;
+
+            li {
+                margin-top: 2rem;
+            }
+    
+            a {
+                margin: 0;
+                padding: 1em;
+                font-size: 2.8rem;
+                font-weight: bold;
+            }
+        }
+
+        
+    }
+
+    .overlay, nav {
+        &.open {
+            display: flex;
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
