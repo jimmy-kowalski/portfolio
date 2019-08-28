@@ -1,10 +1,12 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
 	box-sizing: border-box;
 }
 
 body {
 	width: 100%;
-    height: 100%;
+	height: 100%;
 	background-color: $body-color;
 	font-family: $primaryFont;
 	overflow-x: hidden;
@@ -12,9 +14,9 @@ body {
 
 .container {
 	position: relative;
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
+	width: 90%;
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 a {
@@ -40,22 +42,22 @@ a {
 		opacity: .8;
 		font-family: $secondaryFont;
 		font-size: 3.5rem;
-		background: linear-gradient(to right, #9cecfb, #65c7f7);
+		background: linear-gradient(to right, $linear-color1, $linear-color2);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 }
 
 @media screen and (max-width: 700px) {
-    .heading {
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 3px;
-        }
+	.heading {
+		h1 {
+			font-size: 4rem;
+			letter-spacing: 3px;
+		}
 
-        h5 {
+		h5 {
 			margin-top: -80px;
-            font-size: 3rem;
-        }
-    }
+			font-size: 3rem;
+		}
+	}
 }

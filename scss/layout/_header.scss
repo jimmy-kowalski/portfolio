@@ -3,7 +3,7 @@ header {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)), url(../img/banner.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -17,6 +17,7 @@ header {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    max-width: 700px;
 
     img {
         display: block;
@@ -25,55 +26,171 @@ header {
         height: 200px;
         object-fit: cover;
         border-radius: 50%;
-        border: 3px solid #9cecfb; // #6caed5;
+        border: 3px solid $linear-color1; // #6caed5;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 3.5s;
     }
 
-    h1 {
-        font-family: $secondaryFont;
-        font-size: 5rem;
-        letter-spacing: 4px;
-        // color: #f5f5f5;
-        // background: linear-gradient(to right, #50c9c3, #96deda);
-        // background: linear-gradient(to right, #085078, #85d8ce);
-        // background: linear-gradient(to right, #4cb8c4, #3cd3ad);
-        // background: linear-gradient(to right, #1fa2ff, #12d8fa);
-        // background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
-        // background: linear-gradient(to right, #2193b0, #6dd5ed);
-        // background: linear-gradient(to right, #2980b9, #6dd5fa, #fff);
-        // background: linear-gradient(to right, #00b4db, #0083b0);
-        // background: linear-gradient(to right, #1c92d2, #f2fcfe);
-        // background: linear-gradient(to right, #36d1dc, #5b86e5);
-        // background: linear-gradient(to right, #56ccf2, #2f80ed);
-        // background: linear-gradient(to right, #b2fefa, #0ed2f7);
-        // background: linear-gradient(to right, #c0c0aa, #1cefff);
-        background: linear-gradient(to right, #9cecfb, #65c7f7);
-        // background: linear-gradient(to right, #2c3e50, #4ca1af);
-        // background: linear-gradient(to right, #3a7bd5, #3a6073);
-        // background: linear-gradient(to right, #00d2ff, #928dab);
-        // background: linear-gradient(to right, #4ca1af, #c4e0e5);
-        // background: linear-gradient(to right, #4b79a1, #283e51);
-        // background: linear-gradient(to right, #2980b9, #2c3e50);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding: .2em;
-        // margin: 10px;
+    // h1 {
+    //     font-family: $secondaryFont;
+    //     font-size: 5rem;
+    //     letter-spacing: 4px;
+    //     // color: #f5f5f5;        
+    //     background: linear-gradient(to right, #9cecfb, #65c7f7);
+    //     -webkit-background-clip: text;
+    //     -webkit-text-fill-color: transparent;
+    //     padding: .2em;
+    //     // margin: 10px;
+    // }
+
+    #logo {
+        margin: 20px 0;
+        animation: filling .5s ease forwards 3s;
+
+        // Animating one by one letter 
+        path:nth-child(1) {
+            stroke-dasharray: 463;
+            stroke-dashoffset: 463;
+            animation: anim-letter 2s ease forwards;
+        }
+
+        path:nth-child(2) {
+            stroke-dasharray: 363;
+            stroke-dashoffset: 363;
+            animation: anim-letter 2s ease forwards .2s;
+        }
+
+        path:nth-child(3) {
+            stroke-dasharray: 224;
+            stroke-dashoffset: 224;
+            animation: anim-letter 2s ease forwards .4s;
+        }
+
+        path:nth-child(4) {
+            stroke-dasharray: 239;
+            stroke-dashoffset: 239;
+            animation: anim-letter 2s ease forwards .6s;
+        }
+
+        path:nth-child(5) {
+            stroke-dasharray: 454;
+            stroke-dashoffset: 454;
+            animation: anim-letter 2s ease forwards .8s;
+        }
+
+        path:nth-child(6) {
+            stroke-dasharray: 363;
+            stroke-dashoffset: 363;
+            animation: anim-letter 2s ease forwards 1s;
+        }
+
+        path:nth-child(7) {
+            stroke-dasharray: 220;
+            stroke-dashoffset: 220;
+            animation: anim-letter 2s ease forwards 1.2s;
+        }
+
+        path:nth-child(8) {
+            stroke-dasharray: 544;
+            stroke-dashoffset: 544;
+            animation: anim-letter 2s ease forwards 1.4s;
+        }
+
+        path:nth-child(9) {
+            stroke-dasharray: 260;
+            stroke-dashoffset: 260;
+            animation: anim-letter 2s ease forwards 1.6s;
+        }
+
+        path:nth-child(10) {
+            stroke-dasharray: 367;
+            stroke-dashoffset: 367;
+            animation: anim-letter 2s ease forwards 1.8s;
+        }
+
+        path:nth-child(11) {
+            stroke-dasharray: 363;
+            stroke-dashoffset: 363;
+            animation: anim-letter 2s ease forwards 2s;
+        }
+
+        path:nth-child(12) {
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: anim-letter 2s ease forwards 2.2s;
+        }
+
+        path:nth-child(13) {
+            stroke-dasharray: 273;
+            stroke-dashoffset: 273;
+            animation: anim-letter 2s ease forwards 2.4s;
+        }
     }
-    
+
     p {
         color: $light-color;
-        // opacity: .8;
+        opacity: .8;
         font-size: 1.2rem;
         font-weight: bolder;
         letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeInBottom 0.5s linear forwards;
+        animation-delay: 3s;
     }
 
 }
 
+@keyframes anim-letter {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes filling {
+
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: $linear-color1; // #65c7f7 
+    }
+}
+
+@keyframes fadeInBottom {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .user-box {
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 3px;
+
+        // h1 {
+        //     font-size: 4rem;
+        //     letter-spacing: 3px;
+        // }
+
+        #logo {
+            width: 80%;
         }
 
         p {

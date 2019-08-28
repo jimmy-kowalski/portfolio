@@ -1,6 +1,8 @@
 /*----------  base
 ------------------------------------------------------------------------------*/
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -69,8 +71,8 @@ header {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.85)), to(rgba(0, 0, 0, 0.85))), url(../img/banner.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(../img/banner.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url(../img/banner.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -85,6 +87,7 @@ header {
           transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
+  max-width: 700px;
 }
 
 .user-box img {
@@ -96,30 +99,200 @@ header {
      object-fit: cover;
   border-radius: 50%;
   border: 3px solid #9cecfb;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
 }
 
-.user-box h1 {
-  font-family: "Pacifico", cursive;
-  font-size: 5rem;
-  letter-spacing: 4px;
-  background: -webkit-gradient(linear, left top, right top, from(#9cecfb), to(#65c7f7));
-  background: linear-gradient(to right, #9cecfb, #65c7f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: .2em;
+.user-box #logo {
+  margin: 20px 0;
+  -webkit-animation: filling .5s ease forwards 3s;
+          animation: filling .5s ease forwards 3s;
+}
+
+.user-box #logo path:nth-child(1) {
+  stroke-dasharray: 463;
+  stroke-dashoffset: 463;
+  -webkit-animation: anim-letter 2s ease forwards;
+          animation: anim-letter 2s ease forwards;
+}
+
+.user-box #logo path:nth-child(2) {
+  stroke-dasharray: 363;
+  stroke-dashoffset: 363;
+  -webkit-animation: anim-letter 2s ease forwards .2s;
+          animation: anim-letter 2s ease forwards .2s;
+}
+
+.user-box #logo path:nth-child(3) {
+  stroke-dasharray: 224;
+  stroke-dashoffset: 224;
+  -webkit-animation: anim-letter 2s ease forwards .4s;
+          animation: anim-letter 2s ease forwards .4s;
+}
+
+.user-box #logo path:nth-child(4) {
+  stroke-dasharray: 239;
+  stroke-dashoffset: 239;
+  -webkit-animation: anim-letter 2s ease forwards .6s;
+          animation: anim-letter 2s ease forwards .6s;
+}
+
+.user-box #logo path:nth-child(5) {
+  stroke-dasharray: 454;
+  stroke-dashoffset: 454;
+  -webkit-animation: anim-letter 2s ease forwards .8s;
+          animation: anim-letter 2s ease forwards .8s;
+}
+
+.user-box #logo path:nth-child(6) {
+  stroke-dasharray: 363;
+  stroke-dashoffset: 363;
+  -webkit-animation: anim-letter 2s ease forwards 1s;
+          animation: anim-letter 2s ease forwards 1s;
+}
+
+.user-box #logo path:nth-child(7) {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  -webkit-animation: anim-letter 2s ease forwards 1.2s;
+          animation: anim-letter 2s ease forwards 1.2s;
+}
+
+.user-box #logo path:nth-child(8) {
+  stroke-dasharray: 544;
+  stroke-dashoffset: 544;
+  -webkit-animation: anim-letter 2s ease forwards 1.4s;
+          animation: anim-letter 2s ease forwards 1.4s;
+}
+
+.user-box #logo path:nth-child(9) {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  -webkit-animation: anim-letter 2s ease forwards 1.6s;
+          animation: anim-letter 2s ease forwards 1.6s;
+}
+
+.user-box #logo path:nth-child(10) {
+  stroke-dasharray: 367;
+  stroke-dashoffset: 367;
+  -webkit-animation: anim-letter 2s ease forwards 1.8s;
+          animation: anim-letter 2s ease forwards 1.8s;
+}
+
+.user-box #logo path:nth-child(11) {
+  stroke-dasharray: 363;
+  stroke-dashoffset: 363;
+  -webkit-animation: anim-letter 2s ease forwards 2s;
+          animation: anim-letter 2s ease forwards 2s;
+}
+
+.user-box #logo path:nth-child(12) {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  -webkit-animation: anim-letter 2s ease forwards 2.2s;
+          animation: anim-letter 2s ease forwards 2.2s;
+}
+
+.user-box #logo path:nth-child(13) {
+  stroke-dasharray: 273;
+  stroke-dashoffset: 273;
+  -webkit-animation: anim-letter 2s ease forwards 2.4s;
+          animation: anim-letter 2s ease forwards 2.4s;
 }
 
 .user-box p {
   color: #f5f5f5;
+  opacity: .8;
   font-size: 1.2rem;
   font-weight: bolder;
   letter-spacing: 1px;
+  opacity: 0;
+  -webkit-animation: fadeInBottom 0.5s linear forwards;
+          animation: fadeInBottom 0.5s linear forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+@-webkit-keyframes anim-letter {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anim-letter {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes filling {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #9cecfb;
+  }
+}
+
+@keyframes filling {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #9cecfb;
+  }
+}
+
+@-webkit-keyframes fadeInBottom {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 700px) {
-  .user-box h1 {
-    font-size: 4rem;
-    letter-spacing: 3px;
+  .user-box #logo {
+    width: 80%;
   }
   .user-box p {
     font-size: 1rem;
@@ -150,11 +323,43 @@ header {
       -ms-flex: 1;
           flex: 1;
   padding: 0 2em;
+  margin-right: 2rem;
 }
 
 .about-inner .bio p {
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.about-inner .bio .btn-info {
+  position: relative;
+  display: inline-block;
+  color: #9cecfb;
+}
+
+.about-inner .bio .btn-info::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #9cecfb;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.about-inner .bio .btn-info:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .about-inner .skills {
@@ -254,25 +459,15 @@ header {
           box-shadow: 0 0 25px rgba(156, 236, 251, 0.6);
 }
 
-.about-inner .skills .skill-bar .progress::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #9cecfb;
-  -webkit-box-shadow: 0 0 25px #9cecfb;
-          box-shadow: 0 0 25px #9cecfb;
-}
-
 @media screen and (max-width: 800px) {
   .about-inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .about-inner .bio {
+    margin-right: 0;
   }
   .about-inner .skills {
     margin-top: 4rem;
@@ -289,7 +484,7 @@ header {
 }
 
 .portfolio-heading h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: bold;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -559,8 +754,26 @@ nav ul:hover li {
 }
 
 nav ul li {
+  opacity: 0;
+  -webkit-animation: fadeInDown 0.5s linear forwards;
+          animation: fadeInDown 0.5s linear forwards;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+nav ul li:nth-child(1) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+nav ul li:nth-child(2) {
+  -webkit-animation-delay: 4.25s;
+          animation-delay: 4.25s;
+}
+
+nav ul li:nth-child(3) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
 }
 
 nav ul li:hover {
@@ -586,6 +799,11 @@ nav ul a {
   cursor: pointer;
   z-index: 99;
   display: none;
+  opacity: 0;
+  -webkit-animation: fadeInRight 0.5s linear forwards;
+          animation: fadeInRight 0.5s linear forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
   -webkit-transition: -webkit-transform .5s ease-out;
   transition: -webkit-transform .5s ease-out;
   transition: transform .5s ease-out;
@@ -647,6 +865,58 @@ nav ul a {
   transition: opacity .7s;
 }
 
+@-webkit-keyframes fadeInDown {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    -webkit-transform: translateX(35px);
+            transform: translateX(35px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    -webkit-transform: translateX(35px);
+            transform: translateX(35px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .menu-toggle {
     display: block;
@@ -672,13 +942,18 @@ nav ul a {
   nav ul li {
     margin-top: 2rem;
   }
+  nav ul li:nth-child(1), nav ul li:nth-child(2), nav ul li:nth-child(3) {
+    -webkit-animation-delay: 0s !important;
+            animation-delay: 0s !important;
+  }
   nav ul a {
     margin: 0;
     padding: 1em;
     font-size: 2.8rem;
     font-weight: bold;
   }
-  .overlay.open, nav.open {
+  .overlay.open,
+  nav.open {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

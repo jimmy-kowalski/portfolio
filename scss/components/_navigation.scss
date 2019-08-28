@@ -5,7 +5,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    
+
     ul {
         display: flex;
         // justify-content: space-around;
@@ -16,14 +16,28 @@ nav {
         }
 
         li {
+            opacity: 0;
+            animation: fadeInDown 0.5s linear forwards;
             transition: .5s;
+
+            &:nth-child(1) {
+                animation-delay: 4s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 4.25s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 4.5s;
+            }
 
             &:hover {
                 opacity: 1;
                 filter: blur(0);
             }
         }
-    
+
         a {
             color: $light-color;
             padding: 1em 0;
@@ -32,7 +46,7 @@ nav {
             letter-spacing: 2px;
             // opacity: 1;
         }
-        
+
     }
 
 }
@@ -49,6 +63,9 @@ nav {
     cursor: pointer;
     z-index: 99;
     display: none;
+    opacity: 0;
+    animation: fadeInRight 0.5s linear forwards;
+    animation-delay: 3s;
     transition: transform .5s ease-out;
 
     .btn-line {
@@ -57,7 +74,7 @@ nav {
         height: 4px;
         margin: 3px 0 5px 0;
         border-radius: 5px;
-        background: linear-gradient(to right, #9cecfb, #65c7f7);
+        background: linear-gradient(to right, $linear-color1, $linear-color2);
         transition: .5s ease-out;
 
         // &:nth-child(1) {
@@ -82,7 +99,7 @@ nav {
     &.open {
         .btn-line {
             &:nth-child(1) {
-                transform: translate(0, 9px) rotate(45deg); 
+                transform: translate(0, 9px) rotate(45deg);
             }
 
             &:nth-child(2) {
@@ -90,7 +107,7 @@ nav {
             }
 
             &:nth-child(3) {
-                transform: translate(0, -9px) rotate(-45deg); 
+                transform: translate(0, -9px) rotate(-45deg);
                 width: 30px;
             }
         }
@@ -98,7 +115,7 @@ nav {
 }
 
 .overlay {
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0, 0, 0, .9);
     position: fixed;
     right: 0;
     left: 0;
@@ -111,9 +128,35 @@ nav {
     transition: opacity .7s;
 }
 
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(35px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .menu-toggle {
         display: block;
+        // opacity: 0;
+        // animation: fadeInRight 0.5s linear forwards;
     }
 
     nav {
@@ -130,8 +173,14 @@ nav {
 
             li {
                 margin-top: 2rem;
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    animation-delay: 0s !important;
+                }
             }
-    
+
             a {
                 margin: 0;
                 padding: 1em;
@@ -140,10 +189,11 @@ nav {
             }
         }
 
-        
+
     }
 
-    .overlay, nav {
+    .overlay,
+    nav {
         &.open {
             display: flex;
             transform: scale(1);
